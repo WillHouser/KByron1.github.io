@@ -1,2 +1,2 @@
-# DroughtsAndConflict
-The main repository for our GeoVis Final Project
+# 15abarke.github.io
+Demo for leaflet sync
