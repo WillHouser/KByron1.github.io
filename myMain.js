@@ -22,15 +22,6 @@ var myFunctionHolder ={};
       var circleMarker = L.circleMarker(latlng, geojsonMarkerOptions);
       return circleMarker;
     }
-// violence 
-myFunctionHolder.pointToCircle = function (feature, latlng){
-  var geojsonMarkerOptions = {
-    radius: 5,
-    color: "#000"
-  };
-  var circleMarker = L.circleMarker(latlng, geojsonMarkerOptions);
-  return circleMarker;
-}
     //execute only when window is fully loaded
     window.onload = function () {
 
