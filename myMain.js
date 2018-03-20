@@ -14,6 +14,7 @@ var myFunctionHolder ={};
       var geojsonMarkerOptions = {
         radius: 8,
         fillColor: "yellow",
+        color: "#000",
         weight: 1,
         opacity: 1,
         fillOpacity: 0.8
@@ -44,7 +45,7 @@ var myFunctionHolder ={};
 
     var violenceLayer = L.geoJSON(Violence, {
       onEachFeature: myFunctionHolder.pointToCircle,
-        onEachFeature: myFunctionHolder.addPops
+      onEachFeature: myFunctionHolder.addPopups
     });
 
     mapObject.addLayer(violenceLayer);
