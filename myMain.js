@@ -14,7 +14,6 @@ var myFunctionHolder ={};
       var geojsonMarkerOptions = {
         radius: 8,
         fillColor: "yellow",
-        color: "#000",
         weight: 1,
         opacity: 1,
         fillOpacity: 0.8
