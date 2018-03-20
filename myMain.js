@@ -13,7 +13,7 @@ var myFunctionHolder ={};
     myFunctionHolder.pointToCircle = function (feature, latlng) {
       var geojsonMarkerOptions = {
         radius: 8,
-        fillColor: "yellow",
+        fillColor: fillColorVar,
         color: "#000",
         weight: 1,
         opacity: 1,
@@ -43,6 +43,13 @@ var myFunctionHolder ={};
     heatmapLayer.setData(theftsHeatMapData);
     mapObject.addLayer(heatmapLayer);
 
+    function pointToCircle(feature,latlng) {
+    var fillColorVar = "";
+
+    if (Number(feature.properties["ndeath"])>=0 && Number(feature.properties["ndeath"])<5){
+      fillColorVar = "blue"
+    }
+        
     var violenceLayer = L.geoJSON(Violence, {
       onEachFeature: myFunctionHolder.addPopups,
       pointToLayer: myFunctionHolder.pointToCircle
