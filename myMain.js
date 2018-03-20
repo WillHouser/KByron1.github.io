@@ -47,7 +47,7 @@ var myFunctionHolder ={};
     var fillColorVar = "";
 
     if (Number(feature.properties["ndeath"])>=0 && Number(feature.properties["ndeath"])<5){
-      fillColorVar = "blue"
+      fillColorVar = "blue"}
     }
         
     var violenceLayer = L.geoJSON(Violence, {
