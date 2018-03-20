@@ -1,5 +1,10 @@
 "use strict";
+function pointToCircle(feature,latlng) {
+    var fillColorVar = "";
 
+    if (Number(feature.properties["ndeath"])>=0 && Number(feature.properties["ndeath"])<5){
+      fillColorVar = "blue"}
+    }
 var myFunctionHolder ={};
 
     //declaring function 1
@@ -42,14 +47,7 @@ var myFunctionHolder ={};
     var heatmapLayer= new HeatmapOverlay(cfg);
     heatmapLayer.setData(theftsHeatMapData);
     mapObject.addLayer(heatmapLayer);
-
-    function pointToCircle(feature,latlng) {
-    var fillColorVar = "";
-
-    if (Number(feature.properties["ndeath"])>=0 && Number(feature.properties["ndeath"])<5){
-      fillColorVar = "blue"}
-    }
-        
+ 
     var violenceLayer = L.geoJSON(Violence, {
       onEachFeature: myFunctionHolder.addPopups,
       pointToLayer: myFunctionHolder.pointToCircle
