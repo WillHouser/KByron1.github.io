@@ -44,8 +44,8 @@ var myFunctionHolder ={};
     mapObject.addLayer(heatmapLayer);
 
     var violenceLayer = L.geoJSON(Violence, {
-      onEachFeature: myFunctionHolder.pointToCircle,
-      onEachFeature: myFunctionHolder.addPopups
+      onEachFeature: myFunctionHolder.addPopups,
+      pointToLayer: myFunctionHolder.pointToCircle
     });
 
     mapObject.addLayer(violenceLayer);
