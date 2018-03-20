@@ -16,6 +16,16 @@ var myFunctionHolder ={};
 
     //declaring function 2
     myFunctionHolder.pointToCircle = function (feature, latlng) {
+      var fillColorVar = "";
+
+         if (Number(feature.properties["ndeath"]) > 0 && Number(feature.properties["ndeath"]) < 5) {
+            fillColorVar = "Green";
+         } else if (Number(feature.properties["ndeath"]) > 5 && Number(feature.properties["ndeath"]) < 10) {
+            fillColorVar = "Blue";
+         } else if (Number(feature.properties["ndeath"]) > 10 && Number(feature.properties["ndeath"]) < 100000) {
+            fillColorVar = "Red";
+         }
+        
       var geojsonMarkerOptions = {
         radius: 8,
         fillColor: fillColorVar,
