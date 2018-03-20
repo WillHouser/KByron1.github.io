@@ -4,8 +4,8 @@ var myFunctionHolder ={};
 
     //declaring function 1
     myFunctionHolder.addPopups = function (feature, layer) {
-      if (feature.properties && feature.properties.Location) {
-        layer.bindPopup("<b>Address:</b>" + feature.properties.Location);
+      if (feature.properties && feature.properties.startdate) {
+        layer.bindPopup(feature.properties.startdate);
       }
     }
 
@@ -43,7 +43,8 @@ var myFunctionHolder ={};
     mapObject.addLayer(heatmapLayer);
 
     var violenceLayer = L.geoJSON(Violence, {
-      onEachFeature: myFunctionHolder.pointToCircle
+      onEachFeature: myFunctionHolder.pointToCircle,
+        onEachFeature: myFunctionHolder.addPops
     });
 
     mapObject.addLayer(violenceLayer);
